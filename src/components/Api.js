@@ -6,8 +6,8 @@ export const createTask = (task) => {
   return axios.post(`${API_URL}/createTasks`, task);
 };
 
-export const getTasks = () => {
-  return axios.get(`${API_URL}/getAlltasks`);
+export const getTasks = async (page = 1, size = 10) => {
+  return await axios.get(`${API_URL}/getAlltasks?page=${page}&size=${size}`);
 };
 
 export const getTaskById = (id) => {
